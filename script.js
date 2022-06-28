@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
     //THIS IS FOR INTRO CONTENT
-    const content = "Hello, I am 🖳 Frontend WebDeveloper.";
+    const content = "We are WebDevFlask.";
     const ele = '<span>' + content.split('').join('</span><span>') + '</span>';
 
-    $(ele).hide().appendTo('.home .home-content .text-1').each(function(i) {
+    $(ele).hide().appendTo('.home-content').each(function(i) {
         $(this).delay(100 * i).css({
             display: 'inline',
             opacity: 0
@@ -19,7 +19,7 @@ $(document).ready(function() {
         $(this).toggleClass('active');
 
         $('.navbar .menu').toggleClass("active");
-        $('.menu-btn img').toggleClass("active");
+      
     });
 
 
@@ -55,17 +55,22 @@ $(document).ready(function() {
         } else {
             $('.navbar').removeClass('sticky');
         }
-        // if (this.scrollY > 400) {
+        if (this.scrollY > 20) {
+            $('.bb').addClass("sticky");
+        } else {
+            $('.bb').removeClass('sticky');
+        }
+        if (this.scrollY > 400) {
 
-        //     $('.about .about-content .left img,  .about .about-content .right').addClass("sticky");
-        // } else {
-        //     $('.about .about-content .left img, .about .about-content .right').removeClass('sticky');
-        // }
-        // if (this.scrollY > 820) {
-        //     $('.service .title, .service .service-content .card').addClass("sticky");
-        // } else {
-        //     $('.service .title, .service .service-content .card').removeClass('sticky');
-        // }
+            $('.about .about-content .left img,  .about .about-content .right').addClass("sticky");
+        } else {
+            $('.about .about-content .left img, .about .about-content .right').removeClass('sticky');
+        }
+        if (this.scrollY > 820) {
+            $('.service .title, .service .service-content .card').addClass("sticky");
+        } else {
+            $('.service .title, .service .service-content .card').removeClass('sticky');
+        }
     });
     window.console = window.console || function(t) {};
     
